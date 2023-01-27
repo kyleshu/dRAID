@@ -17,11 +17,11 @@ do
   if [[ $i -gt 0 ]] && [[ $i -le $raid_size ]]
   then
     echo "start $line"
-    ssh -tt "$username@$line" "dRAID_ASPLOS23/dRAID/scripts/run_server_malloc.sh $raid_option $i $network $chunk $raid_size $num_qp"
+    ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/run_server_malloc.sh $username $raid_option $i $network $chunk $raid_size $num_qp"
     echo "$line is READY!"
   else
     echo "kill $line"
-    ssh -tt "$username@$line" "dRAID_ASPLOS23/dRAID/scripts/kill_server.sh"
+    ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/kill_server.sh $username"
   fi
   let i+=1
 done 10< $hosts
