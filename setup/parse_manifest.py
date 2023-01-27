@@ -12,11 +12,11 @@ if __name__ == '__main__':
     for node in rspec:
         if node.tag == '{http://www.geni.net/resources/rspec/3}node':
             if node[0][0].attrib['name'] == "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD":
-                ubuntu = node[6][0].attrib['hostname']
+                ubuntu = node[7][0].attrib['hostname']
                 continue
             ip_addrs.write(node[3][0].attrib['address'] + '\n')
             ip_addrs2.write(node[2][0].attrib['address'] + '\n')
-            for entry in node[6]:
+            for entry in node[7]:
                 try:
                     hosts.write(entry.attrib['hostname'] + '\n')
                     break
