@@ -1,6 +1,6 @@
 # CloudLab Testbed Setup
 
-To the best of our knowledge, the only public available testbed is CloudLab. 
+To the best of our knowledge, the only publicly available testbed is CloudLab. 
 - To setup a testbed, you will need to acquire a CloudLab account at https://www.cloudlab.us/ first.
 - We strongly suggest to reserve the nodes (https://www.cloudlab.us/resgroup.php) in advance, because they are usually occupied.
   - You will need 22 c6525-100g instances from CloudLab Utah cluster to run the full test suite.
