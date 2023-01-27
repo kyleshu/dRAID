@@ -12,6 +12,7 @@ if __name__ == '__main__':
     for node in rspec:
         if node.tag == '{http://www.geni.net/resources/rspec/3}node':
             if node[0][0].attrib['name'] == "urn:publicid:IDN+emulab.net+image+emulab-ops:UBUNTU18-64-STD":
+                ubuntu = node[6][0].attrib['hostname']
                 continue
             ip_addrs.write(node[3][0].attrib['address'] + '\n')
             ip_addrs2.write(node[2][0].attrib['address'] + '\n')
@@ -21,6 +22,7 @@ if __name__ == '__main__':
                     break
                 except KeyError:
                     continue
+    print(ubuntu)
     hosts.close()
     ip_addrs.close()
     ip_addrs2.close()
