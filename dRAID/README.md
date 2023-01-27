@@ -17,6 +17,7 @@
     - `malloc0.json` is the configuration for RAM Disk.
 
 ## Compile
+If you want to run FIO or YCSB, you can skip this. The corresponding scripts will do this for you.
 
 1. To compile host-side code, run:
 ```Bash
