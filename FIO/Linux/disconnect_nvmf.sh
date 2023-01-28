@@ -8,9 +8,9 @@ while read -u10 line
 do
   if [[ $i -gt 0 ]]
   then
-    echo "connect $line"
+    echo "disconnect $line"
     sudo nvme disconnect -n "nqn.2016-06.io.spdk:cnode$i"
-    echo "$line is READY!"
+    echo "$line is disconnected!"
   else
     echo "skipping $line"
   fi
