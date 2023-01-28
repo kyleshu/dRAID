@@ -305,7 +305,7 @@ hello_start(void *arg1)
         return;
     }
     rand_buffer((unsigned char*)hello_context->init_buff, hello_context->buff_len);
-    show_buffer((unsigned char*)hello_context->init_buff, hello_context->buff_len);
+    //show_buffer((unsigned char*)hello_context->init_buff, hello_context->buff_len);
     //snprintf(hello_context->init_buff, blk_size * span_length, "%s", "Hello World!\n");
     memcpy(hello_context->buff, hello_context->init_buff, hello_context->buff_len);
 

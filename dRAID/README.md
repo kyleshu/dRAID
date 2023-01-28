@@ -46,8 +46,15 @@ cd <path to this repository>/dRAID/scripts
 ./run_server_remote_malloc.sh <your CloudLab username> raid5 100g 512 3 1 # enter yes when it prompts
 ```
 
-2. Generate the necessary configuration file on node0:
+2. Generate the host-side configuration file on node0:
 ```Bash
 cd <path to this repository>/dRAID/scripts
-
+./generate_raid_config.sh 512 3 1
 ```
+
+3. Run HelloWorld program:
+```Bash
+cd <path to this repository>/dRAID/host
+sudo ./rpc_raid_main -c ~/artifacts/raid5_100g.json -b Raid0
+```
+Ignore the error message `io_device Raid0 not unregistered`. We have not implemented graceful shutdown yet.
