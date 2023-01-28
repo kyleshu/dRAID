@@ -16,7 +16,7 @@ sudo rm nohup.out
 sudo ./setup.sh reset
 sudo HUGEMEM=10240 PCI_ALLOWED="0000:c6:00.0" ./setup.sh
 
-sudo sh -c "nohup ./build/bin/nvmf_tgt -m 0x1000 &"
+sudo sh -c "nohup ../build/bin/nvmf_tgt -m 0x1000 &"
 
 sleep 3
 
