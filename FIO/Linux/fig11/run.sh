@@ -92,7 +92,7 @@ then
   sudo mkfs -t ext4 /dev/md0
   sudo mount /dev/md0 /raid
   sudo mkdir /raid/fiotest
-  sudo fio --directory=/raid/fiotest --size=128M --numjobs=1 --time_based --runtime=15s --ramp_time=2s --ioengine=libaio --direct=1 --verify=0 --rw=randwrite --group_reporting=1 --name=randwrite --bs=128K --iodepth=7
+  sudo fio --directory=/raid/fiotest --size=8196M --numjobs=1 --time_based --runtime=15s --ramp_time=2s --ioengine=libaio --direct=1 --verify=0 --rw=randwrite --group_reporting=1 --name=randwrite --bs=128K --iodepth=7
   sudo rm -r /raid/fiotest
   sudo umount /raid
   sudo mdadm -S /dev/md0
