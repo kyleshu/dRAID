@@ -48,7 +48,6 @@ cd ~/dRAID_ASPLOS23/dRAID/scripts (TODO)
 
 2. Generate the host-side configuration file on node0:
 ```Bash
-cd ~/dRAID_ASPLOS23/dRAID/scripts (TODO)
 ./generate_raid_config.sh 512 3 1
 ```
 3. setup SPDK on node0:
