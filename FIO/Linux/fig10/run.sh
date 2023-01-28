@@ -28,13 +28,13 @@ fi
 
 if [[ "$io_size" == "64" ]]
 then
-  sudo fio --directory=/raid/fiotest --size=8196M --time_based --runtime=15s --ramp_time=2s --ioengine=libaio --direct=1 --verify=0 --group_reporting=1 --name=randwrite --rw=randwrite --bs=128K --iodepth=7 --numjobs=1
+  sudo fio --directory=/raid/fiotest --size=8196M --time_based --runtime=15s --ramp_time=2s --ioengine=libaio --direct=1 --verify=0 --group_reporting=1 --name=randwrite --rw=randwrite --bs=64K --iodepth=7 --numjobs=1
   exit 0
 fi
 
 if [[ "$io_size" == "128" ]]
 then
-  sudo fio --directory=/raid/fiotest --size=8196M --time_based --runtime=15s --ramp_time=2s --ioengine=libaio --direct=1 --verify=0 --group_reporting=1 --name=randwrite --rw=randwrite --bs=64K --iodepth=6 --numjobs=1
+  sudo fio --directory=/raid/fiotest --size=8196M --time_based --runtime=15s --ramp_time=2s --ioengine=libaio --direct=1 --verify=0 --group_reporting=1 --name=randwrite --rw=randwrite --bs=128K --iodepth=6 --numjobs=1
   exit 0
 fi
 
