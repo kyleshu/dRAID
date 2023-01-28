@@ -26,12 +26,12 @@ If you want to run FIO or YCSB, you can skip the rest of the page. The correspon
 
 1. You only need to compile host-side code on the first node (node0). To compile the host-side code, run:
 ```Bash
-cd <path to this repository>/dRAID/host
+cd ~/dRAID_ASPLOS23/dRAID/host (TODO)
 make rpc_raid_main
 ```
 2. You need to compile server-side code on all the nodes except the first (node0) and the last one (Ubuntu node). To compile the server-side code, run:
 ```Bash
-cd <path to this repository>/dRAID/server
+cd ~/dRAID_ASPLOS23/dRAID/server (TODO)
 make raid5
 make raid6
 ```
@@ -40,21 +40,27 @@ make raid6
 
 This program uses RAM disk to verify dRAID read/write functionality. You will need the first 4 nodes of your testbed to run this program.
 
-1. Start dRAID on node1, node2, and node3 by running the following command on node0:
+1. Start dRAID on remote targets by running the following command on node0:
 ```Bash
-cd <path to this repository>/dRAID/scripts
+cd ~/dRAID_ASPLOS23/dRAID/scripts (TODO)
 ./run_server_remote_malloc.sh <your CloudLab username> raid5 100g 512 3 1 # enter yes when it prompts
 ```
 
 2. Generate the host-side configuration file on node0:
 ```Bash
-cd <path to this repository>/dRAID/scripts
+cd ~/dRAID_ASPLOS23/dRAID/scripts (TODO)
 ./generate_raid_config.sh 512 3 1
 ```
-
-3. Run HelloWorld program:
+3. setup SPDK on node0:
 ```Bash
-cd <path to this repository>/dRAID/host
+cd ~/draid-spdk/scripts
+sudo ./setup.sh reset
+sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
+```
+
+5. Run HelloWorld program on node0:
+```Bash
+cd ~/dRAID_ASPLOS23/dRAID/host (TODO)
 sudo ./rpc_raid_main -c ~/artifacts/raid5_100g.json -b Raid0
 ```
 Ignore the error message `io_device Raid0 not unregistered`. We have not implemented graceful shutdown yet.
