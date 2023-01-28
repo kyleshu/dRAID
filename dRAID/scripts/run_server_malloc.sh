@@ -19,7 +19,7 @@ sudo HUGEMEM=10240 PCI_ALLOWED="0000:c6:00.0" ./scripts/setup.sh
 
 cd /users/$username/dRAID_ASPLOS23/dRAID/server
 sudo rm nohup.out
-make clean
-make "$raid_option"
+sudo -u $username make clean
+sudo -u $username make $raid_option
 
 sudo sh -c "nohup ./$raid_option -P $i -b Malloc0 -c malloc0.json -m 0x10000 -a /users/$username/artifacts/ip_addrs_$network.txt -S $chunk -N $raid_size -E $num_qp > /dev/null 2>&1 &"
