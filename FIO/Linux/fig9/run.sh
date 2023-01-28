@@ -1,6 +1,6 @@
 #!/bin/bash
 
-$io_size=$1
+io_size=$1
 
 if [[ "$io_size" == "4" ]]
 then
