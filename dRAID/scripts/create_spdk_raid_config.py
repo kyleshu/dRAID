@@ -34,7 +34,7 @@ if __name__ == '__main__':
     params["name"] = "Raid0"
     params["strip_size_kb"] = int(sys.argv[3])
     params["raid_level"] = sys.argv[4]
-    params["degraded"] = sys.argv[5]
+    params["degraded"] = sys.argv[6]
     base_bdevs = list()
     for i in range(1, size + 1):
         base_bdev = "Nvmf" + str(i) + "n1"
