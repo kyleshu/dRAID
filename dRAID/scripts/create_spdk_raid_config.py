@@ -36,6 +36,8 @@ if __name__ == '__main__':
     params["raid_level"] = sys.argv[4]
     if sys.argv[6] == 'true':
         params["degraded"] = True
+    else:
+        params["degraded"] = False
     base_bdevs = list()
     for i in range(1, size + 1):
         base_bdev = "Nvmf" + str(i) + "n1"
