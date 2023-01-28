@@ -9,7 +9,7 @@ ip_addr=`ip address show dev "$interface" | grep -oP "inet\s+\K\d{1,3}\.\d{1,3}\
 sudo kill -9 $(ps aux | grep '[r]aid' | awk '{print $2}')
 sudo kill -9 $(ps aux | grep '[n]vmf_tgt' | awk '{print $2}')
 
-cd /users/$username/git/spdk/scripts
+cd /users/$username/spdk/scripts
 
 sudo rm nohup.out
 

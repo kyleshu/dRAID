@@ -63,4 +63,6 @@ cd fio
 make
 sudo make install
 sudo ldconfig
+# clone the artifacts
+git clone https://github.com/kyleshu/dRAID_ASPLOS23.git (TODO)
 ```
