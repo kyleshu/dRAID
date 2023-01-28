@@ -1,7 +1,6 @@
 #!/bin/bash
 
-sudo rm -r /raid/fiotest
-sudo umount /raid
+
 sudo mdadm -S /dev/md0
 
 sudo mdadm --zero-superblock /dev/nvme2n1
