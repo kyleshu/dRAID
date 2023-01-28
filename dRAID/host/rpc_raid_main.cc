@@ -8,7 +8,7 @@
 #include "spdk/bdev_zone.h"
 
 static char *g_bdev_name = (char*) "Raid0";
-static uint64_t start_offset = 1024;
+static uint64_t start_offset = 1;
 static uint64_t span_length = 5;
 
 /*

@@ -1080,7 +1080,7 @@ raid_bdev_create(struct raid_bdev_config *raid_cfg)
     raid_bdev->num_qp = raid_cfg->num_qp;
     raid_bdev->config = raid_cfg;
     raid_bdev->level = raid_cfg->level;
-    raid_bdev->degraded = false;
+    raid_bdev->degraded = raid_cfg->base_rpcs[0].degraded;
 
     raid_bdev_gen = &raid_bdev->bdev;
 
