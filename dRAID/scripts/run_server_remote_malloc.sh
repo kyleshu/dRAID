@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# ./run_server_remote_malloc.sh your_user_name raid5 100g 512 4 1
-
 username=$1
 raid_option=$2
 network=$3
