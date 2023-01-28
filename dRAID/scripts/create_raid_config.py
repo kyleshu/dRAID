@@ -24,6 +24,10 @@ if __name__ == '__main__':
     for i in range(1, size + 1):
         base_rpc = dict()
         base_rpc["uri"] = ip_addr_list[i].strip()
+        if i == 1 and sys.argv[6] == 'true':
+            base_rpc["degraded"] = True
+        else:
+            base_rpc["degraded"] = False
         base_rpcs.append(base_rpc)
     params["base_rpcs"] = base_rpcs
     config["params"] = params
