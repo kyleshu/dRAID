@@ -24,12 +24,12 @@ If you want to run FIO or YCSB, you can skip the rest of the page. The correspon
 
 ## Compile
 
-1. You only need to compile host-side code on the first node (dRAID host). To compile the host-side code, run:
+1. You only need to compile host-side code on the first node (node0). To compile the host-side code, run:
 ```Bash
 cd <path to this repository>/dRAID/host
 make rpc_raid_main
 ```
-2. You need to compile server-side code on all the nodes except the first (dRAID host) and the last one (Linux RAID host). To compile the server-side code, run:
+2. You need to compile server-side code on all the nodes except the first (node0) and the last one (Ubuntu node). To compile the server-side code, run:
 ```Bash
 cd <path to this repository>/dRAID/server
 make raid5
