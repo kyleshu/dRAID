@@ -645,7 +645,7 @@ raid_bdev_config_add(const char *raid_name, uint32_t strip_size, uint8_t num_qp,
  * slot - Position to add base rpc
  */
 int
-raid_bdev_config_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *base_rpc_uri,
+raid_bdev_config_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *base_rpc_uri, bool degraded,
                               uint8_t slot)
 {
     uint8_t i;
@@ -660,6 +660,7 @@ raid_bdev_config_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *bas
         SPDK_ERRLOG("unable to allocate memory\n");
         return -ENOMEM;
     }
+    raid_cfg->base_rpcs[slot].degraded = degraded;
 
     return 0;
 }
@@ -1135,7 +1136,7 @@ raid_dispatch_to_rpc(struct send_wr_wrapper *send_wrapper)
  */
 static int
 raid_bdev_alloc_base_rpc_resource(struct raid_bdev *raid_bdev, const char *rpc_uri,
-                                  uint8_t rpc_slot)
+                                  uint8_t rpc_slot, bool degraded)
 {
     int rc;
 
@@ -1144,7 +1145,7 @@ raid_bdev_alloc_base_rpc_resource(struct raid_bdev *raid_bdev, const char *rpc_u
 
     raid_bdev->base_rpc_info[rpc_slot].uri = (char *) malloc((strlen(rpc_uri)+1)*sizeof(char));
     std::strcpy(raid_bdev->base_rpc_info[rpc_slot].uri, rpc_uri);
-    raid_bdev->base_rpc_info[rpc_slot].degraded = false;
+    raid_bdev->base_rpc_info[rpc_slot].degraded = degraded;
     raid_bdev->base_rpc_info[rpc_slot].buf_align = 32;
     raid_bdev->base_rpc_info[rpc_slot].blockcnt = kMaxBlockcnt;
     raid_bdev->base_rpc_info[rpc_slot].up = true;
@@ -1242,7 +1243,7 @@ raid_bdev_configure(struct raid_bdev *raid_bdev)
  */
 static int
 raid_bdev_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *rpc_uri,
-                       uint8_t rpc_slot)
+                       uint8_t rpc_slot, bool degraded)
 {
     struct raid_bdev	*raid_bdev;
     int			rc;
@@ -1253,7 +1254,7 @@ raid_bdev_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *rpc_uri,
         return -ENODEV;
     }
 
-    rc = raid_bdev_alloc_base_rpc_resource(raid_bdev, rpc_uri, rpc_slot);
+    rc = raid_bdev_alloc_base_rpc_resource(raid_bdev, rpc_uri, rpc_slot, degraded);
     if (rc != 0) {
         if (rc != -ENODEV) {
             SPDK_ERRLOG("Failed to allocate resource for rpc '%s'\n", rpc_uri);
@@ -1295,7 +1296,7 @@ raid_bdev_add_base_rpcs(struct raid_bdev_config *raid_cfg)
     int	rc;
 
     for (i = 0; i < raid_cfg->num_base_rpcs; i++) {
-        rc = raid_bdev_add_base_rpc(raid_cfg, raid_cfg->base_rpcs[i].uri, i);
+        rc = raid_bdev_add_base_rpc(raid_cfg, raid_cfg->base_rpcs[i].uri, i, raid_cfg->base_rpcs[i].degraded);
         if (rc != 0) {
             SPDK_ERRLOG("Failed to add base bdev %s to RAID bdev %s: %s\n",
                         raid_cfg->base_rpcs[i].uri, raid_cfg->name, spdk_strerror(-rc));

@@ -11,6 +11,8 @@
 struct rpc_bdev_base_rpc {
     /* rpc uri */
     char *uri;
+    /* degraded */
+    bool degraded;
 };
 
 /*
@@ -91,6 +93,7 @@ decode_raid_level(const struct spdk_json_val *val, void *out)
  */
 static const struct spdk_json_object_decoder rpc_bdev_base_rpc_decoders[] = {
         {"uri", offsetof(struct rpc_bdev_base_rpc, uri), spdk_json_decode_string}
+        {"degraded", offsetof(struct rpc_bdev_base_rpc, degraded), spdk_json_decode_bool}
 };
 
 /*
@@ -185,7 +188,7 @@ rpc_bdev_raid_create(struct spdk_jsonrpc_request *request,
     }
 
     for (i = 0; i < req.base_rpcs.num_base_rpcs; i++) {
-        rc = raid_bdev_config_add_base_rpc(raid_cfg, req.base_rpcs.base_rpcs[i].uri, i);
+        rc = raid_bdev_config_add_base_rpc(raid_cfg, req.base_rpcs.base_rpcs[i].uri, req.base_rpcs.base_rpcs[i].degraded, i);
         if (rc != 0) {
             spdk_jsonrpc_send_error_response_fmt(request, rc,
                                                  "Failed to add base rpc %s to RAID bdev config %s: %s",

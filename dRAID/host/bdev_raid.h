@@ -158,6 +158,8 @@ struct raid_bdev {
 struct raid_base_rpc_config {
     /* rpc uri */
     char *uri;
+    /* degraded */
+    bool degraded;
 };
 
 /*
@@ -233,7 +235,7 @@ int raid_bdev_create(struct raid_bdev_config *raid_cfg);
 int raid_bdev_add_base_rpcs(struct raid_bdev_config *raid_cfg);
 int raid_bdev_config_add(const char *raid_name, uint32_t strip_size, uint8_t num_qp, uint8_t num_base_rpcs,
                          enum raid_level level, struct raid_bdev_config **_raid_cfg);
-int raid_bdev_config_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *base_rpc_uri,
+int raid_bdev_config_add_base_rpc(struct raid_bdev_config *raid_cfg, const char *base_rpc_uri, bool degraded,
                                   uint8_t slot);
 struct raid_bdev_config *raid_bdev_config_find_by_name(const char *raid_name);
 enum raid_level raid_bdev_parse_raid_level(const char *str);
