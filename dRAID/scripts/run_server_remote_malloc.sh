@@ -20,8 +20,13 @@ do
     sudo ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/run_server_malloc.sh $username $raid_option $i $network $chunk $raid_size $num_qp"
     echo "$line is READY!"
   else
-    echo "kill $line"
-    sudo ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/kill_server.sh $username"
+    if [[ $i -eq 0 ]]
+    then
+      echo "skipping $line"
+    else
+      echo "kill $line"
+      sudo ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/kill_server.sh $username"
+    fi
   fi
   let i+=1
 done 10< $hosts

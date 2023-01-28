@@ -26,12 +26,12 @@ If you want to run FIO or YCSB, you can skip the rest of the page. The correspon
 
 1. You only need to compile host-side code on the first node (dRAID host). To compile the host-side code, run:
 ```Bash
-cd host
+cd <your local path to this repository>/dRAID/host
 make rpc_raid_main
 ```
 2. You need to compile server-side code on all the nodes except the first (dRAID host) and the last one (Linux RAID host). To compile the server-side code, run:
 ```Bash
-cd server
+cd <your local path to this repository>/dRAID/server
 make raid5
 make raid6
 ```
@@ -40,5 +40,9 @@ make raid6
 
 This program uses RAM disk to verify dRAID read/write functionality. You will need the first 4 nodes of your testbed to run this program.
 
-1. 
+1. start dRAID on node1, node2, and node3 by running the following command on node0:
+```Bash
+cd <your local path to this repository>/dRAID/scripts
+./
+```
 
