@@ -92,7 +92,7 @@ decode_raid_level(const struct spdk_json_val *val, void *out)
  * Decoder object for rpc_bdev_base_rpc struct
  */
 static const struct spdk_json_object_decoder rpc_bdev_base_rpc_decoders[] = {
-        {"uri", offsetof(struct rpc_bdev_base_rpc, uri), spdk_json_decode_string}
+        {"uri", offsetof(struct rpc_bdev_base_rpc, uri), spdk_json_decode_string},
         {"degraded", offsetof(struct rpc_bdev_base_rpc, degraded), spdk_json_decode_bool}
 };
 
