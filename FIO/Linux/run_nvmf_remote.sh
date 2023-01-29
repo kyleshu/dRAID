@@ -1,7 +1,7 @@
 #!/bin/bash
 
-username=$1
-interface=$2
+username=`whoami`
+interface=$1
 
 hosts="$HOME/artifacts/hosts.txt"
 

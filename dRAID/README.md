@@ -43,7 +43,7 @@ This program uses RAM disk to verify dRAID read/write functionality. You will ne
 1. Start dRAID on remote targets by running the following command on node0:
 ```Bash
 cd ~/dRAID_ASPLOS23/dRAID/scripts (TODO)
-./run_server_remote_malloc.sh <your CloudLab username> raid5 100g 512 3 1 # enter yes when it prompts
+./run_server_remote_malloc.sh raid5 100g 512 3 1 # enter yes when it prompts
 ```
 
 2. Generate the host-side configuration file on node0:

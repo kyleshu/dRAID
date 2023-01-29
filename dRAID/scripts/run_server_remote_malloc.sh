@@ -1,11 +1,11 @@
 #!/bin/bash
 
-username=$1
-raid_option=$2
-network=$3
-chunk=$4
-raid_size=$5
-num_qp=$6
+username=`whoami`
+raid_option=$1
+network=$2
+chunk=$3
+raid_size=$4
+num_qp=$5
 hosts="$HOME/artifacts/hosts.txt"
 
 let i=0

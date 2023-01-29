@@ -5,7 +5,7 @@ If not specified, all the following operations are from node0, which servers as 
 1. Start all remote targets by running:
 ```Bash
 cd ~/dRAID_ASPLOS23/FIO/SPDK (TODO)
-./run_nvmf_remote.sh <your CloudLab username> ens1f0 # enter yes when it prompts
+./run_nvmf_remote.sh ens1f0 # enter yes when it prompts
 ```
 
 2. Setup SPDK on node0:
