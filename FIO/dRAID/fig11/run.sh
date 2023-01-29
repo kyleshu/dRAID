@@ -1,7 +1,7 @@
 #!/bin/bash
 
-username=$1
-chunk_size=$2
+username=`whoami`
+chunk_size=$1
 
 sudo kill -9 $(ps aux | grep '[r]aid' | awk '{print $2}')
 
