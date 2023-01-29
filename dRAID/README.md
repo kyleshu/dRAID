@@ -20,7 +20,6 @@
 ## Prerequisite
 
 You must complete all the CloudLab setup steps under `setup` before you proceed to any FIO experiments.
-If you want to run FIO or YCSB, you can skip the rest of the page. The corresponding scripts will compile the code for you.
 
 ## Compile
 
@@ -35,6 +34,7 @@ cd ~/dRAID_ASPLOS23/dRAID/server (TODO)
 make raid5
 make raid6
 ```
+You do ***not*** need to do this step for every remote target. When you run HelloWorld/FIO/YCSB, the script will compile the code on the remote targets for you.
 
 ## Run HelloWorld Program
 

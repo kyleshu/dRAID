@@ -5,16 +5,20 @@ We provide the artifact for the ASPLOS 2023 paper "Disaggregated RAID Storage in
 - The main implementation of dRAID.
 - CloudLab testbed setup scripts.
 - FIO experiment scripts (Sec 9.2-9.5), which get the main results of the paper.
-- Application experiment scripts (Sec 9.6).
+- YCSB experiment scripts (Sec 9.6).
 
 ## CloudLab Testbed Setup
 
 Please see `setup/README.md` for more details.
 
+## Compilation and Basic Test
+
+Please see `dRAID/README.md` for more details.
+
 ## FIO Experiments
 
 Please see `FIO/README.md` for more details.
 
-## Application Experiments
+## YCSB Experiments
 
-Please see `application/README.md` for more details.
+Please see `YCSB/README.md` for more details.
