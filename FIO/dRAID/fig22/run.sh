@@ -9,7 +9,7 @@ if [[ "$io_size" == "4" ]]
 then
   ../generate_raid_config.sh 512 6 8
   ../run_server_remote_nvme.sh $username raid6 100g 512 6 8
-  sleep 3
+  sleep 6
   sudo LD_PRELOAD=../spdk_bdev /usr/local/bin/fio ../raid6_read.conf -ioengine=../spdk_bdev -iodepth=28 -rw=randread -bs=4k -numjobs=8
   exit 0
 fi
@@ -18,7 +18,7 @@ if [[ "$io_size" == "8" ]]
 then
   ../generate_raid_config.sh 512 6 8
   ../run_server_remote_nvme.sh $username raid6 100g 512 6 8
-  sleep 3
+  sleep 6
   sudo LD_PRELOAD=../spdk_bdev /usr/local/bin/fio ../raid6_read.conf -ioengine=../spdk_bdev -iodepth=22 -rw=randread -bs=8k -numjobs=8
   exit 0
 fi
@@ -27,7 +27,7 @@ if [[ "$io_size" == "16" ]]
 then
   ../generate_raid_config.sh 512 6 8
   ../run_server_remote_nvme.sh $username raid6 100g 512 6 8
-  sleep 3
+  sleep 6
   sudo LD_PRELOAD=../spdk_bdev /usr/local/bin/fio ../raid6_read.conf -ioengine=../spdk_bdev -iodepth=12 -rw=randread -bs=16k -numjobs=8
   exit 0
 fi
