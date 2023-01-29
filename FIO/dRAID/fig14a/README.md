@@ -6,3 +6,5 @@ cd ~/dRAID_ASPLOS23/FIO/dRAID/fig14a (TODO)
 
 ./run.sh <io_depth> # must be one of [2,4,8,16,32,40,48,56,64,68,72,76,80,88,104,128]
 ```
+***
+Note: This is the experiment that you will often run into race conditions during the startup. Please be patient and rerun it for a few times.:kissing_heart:
