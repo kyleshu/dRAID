@@ -27,7 +27,7 @@ vim manifest.xml
 ```
 7. Generate configuration files and upload them to all the nodes by running:
 ```Bash
-./parse_upload_manifest.sh manifest.xml <your CloudLab username>
+./parse_upload_manifest.sh manifest.xml <your_CloudLab_username>
 ```
 
 ## CentOS Setup
