@@ -1080,7 +1080,7 @@ raid_bdev_create(struct raid_bdev_config *raid_cfg)
     raid_bdev->num_qp = raid_cfg->num_qp;
     raid_bdev->config = raid_cfg;
     raid_bdev->level = raid_cfg->level;
-    raid_bdev->degraded = raid_cfg->base_rpcs[0].degraded;
+    raid_bdev->degraded = false;
 
     raid_bdev_gen = &raid_bdev->bdev;
 
@@ -1146,6 +1146,9 @@ raid_bdev_alloc_base_rpc_resource(struct raid_bdev *raid_bdev, const char *rpc_u
     raid_bdev->base_rpc_info[rpc_slot].uri = (char *) malloc((strlen(rpc_uri)+1)*sizeof(char));
     std::strcpy(raid_bdev->base_rpc_info[rpc_slot].uri, rpc_uri);
     raid_bdev->base_rpc_info[rpc_slot].degraded = degraded;
+    if (raid_bdev->base_rpc_info[rpc_slot].degraded) {
+        raid_bdev->degraded = true;
+    }
     raid_bdev->base_rpc_info[rpc_slot].buf_align = 32;
     raid_bdev->base_rpc_info[rpc_slot].blockcnt = kMaxBlockcnt;
     raid_bdev->base_rpc_info[rpc_slot].up = true;
