@@ -3,6 +3,8 @@
 username=$1
 io_size=$2
 
+sudo kill -9 $(ps aux | grep '[r]aid' | awk '{print $2}')
+
 if [[ "$io_size" == "4" ]]
 then
   ../generate_raid_config.sh 512 6 8
