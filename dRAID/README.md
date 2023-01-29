@@ -50,7 +50,7 @@ cd ~/dRAID_ASPLOS23/dRAID/scripts (TODO)
 ```Bash
 ./generate_raid_config.sh 512 3 1
 ```
-3. setup SPDK on node0:
+3. Setup SPDK on node0:
 ```Bash
 cd ~/draid-spdk/scripts
 sudo ./setup.sh reset
