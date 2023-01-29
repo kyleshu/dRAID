@@ -11,7 +11,7 @@ We provide the artifact for the ASPLOS 2023 paper "Disaggregated RAID Storage in
 
 Please see `setup/README.md` for more details.
 
-## Compilation and Basic Test
+## Compilation & Basic Test
 
 Please see `dRAID/README.md` for more details.
 
