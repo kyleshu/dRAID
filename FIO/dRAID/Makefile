@@ -13,10 +13,10 @@ fio_plugin.o:
 	cp ~/draid-spdk/examples/bdev/fio_plugin/fio_plugin.c . && \
 	cc -o fio_plugin.o -MMD -MP -MF fio_plugin.d.tmp -g  -Wall -Wextra -Wno-unused-parameter \
 		-Wno-missing-field-initializers -Wmissing-declarations -fno-strict-aliasing \
-		-I~/draid-spdk/include -march=native -Wformat -Wformat-security -D_GNU_SOURCE \
-		-fPIC -fstack-protector -fno-common -I~/draid-spdk/isa-l/.. -DNDEBUG -O2 \
+		-I ~/draid-spdk/include -march=native -Wformat -Wformat-security -D_GNU_SOURCE \
+		-fPIC -fstack-protector -fno-common -I ~/draid-spdk/isa-l/.. -DNDEBUG -O2 \
 		-U_FORTIFY_SOURCE -D_FORTIFY_SOURCE=2 -DSPDK_GIT_COMMIT=7a8a39289 -pthread -Wno-pointer-sign \
-		-Wstrict-prototypes -Wold-style-definition -std=gnu99 -I~/fio \
+		-Wstrict-prototypes -Wold-style-definition -std=gnu99 -I ~/fio \
 		-c fio_plugin.c && mv -f fio_plugin.d.tmp fio_plugin.d && touch -c fio_plugin.o
 
 spdk_bdev: fio_plugin.o ../../dRAID/host/bdev_raid_rpc.a
