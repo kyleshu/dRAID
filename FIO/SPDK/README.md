@@ -18,4 +18,4 @@ sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
 3. Follow the instruction of each experiment to reproduce the results.
    - Figure 17b requires a different testbed setup and some code changes, which we do not include in this artifact.
    - Ignore the warning "RPC client command timeout". It does not affect the experiments.
-   - Some experiments may hang there for a while, you should kill and rerun them for a more accurate result.
+   - Some experiments may hang there for a while (common on large stripe width and very high load), you should kill and rerun them for a more accurate result.
