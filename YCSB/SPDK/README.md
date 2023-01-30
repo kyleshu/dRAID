@@ -16,8 +16,4 @@ sudo ./setup.sh reset
 sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
 ```
 
-3. Compile mkfs plugin for SPDK and YCSB:
-```Bash
-cd ~/dRAID/YCSB/SPDK
-./compile.sh [rocksdb/objstore] # choose which application to run
-```
+3. Follow the instruction of each experiment to reproduce the results.

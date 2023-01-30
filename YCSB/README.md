@@ -7,4 +7,4 @@
 
 
 
-You must complete all the CloudLab setup steps under `setup` before you proceed to any YCSB experiments.
+You must complete all the CloudLab setup steps under `setup/` before you proceed to any YCSB experiments.
