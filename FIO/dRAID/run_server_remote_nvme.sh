@@ -15,7 +15,7 @@ do
   if [[ $i -gt 0 ]] && [[ $i -le $raid_size ]]
   then
     echo "start $line"
-    sudo ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/run_server_nvme.sh $username $raid_option $i $network $chunk $raid_size $num_qp"
+    sudo ssh -tt "root@$line" "/users/$username/dRAID/dRAID/scripts/run_server_nvme.sh $username $raid_option $i $network $chunk $raid_size $num_qp"
     echo "$line is READY!"
   else
     if [[ $i -eq 0 ]]
@@ -23,7 +23,7 @@ do
       echo "skipping $line"
     else
       echo "kill $line"
-      sudo ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/dRAID/scripts/kill_server.sh $username"
+      sudo ssh -tt "root@$line" "/users/$username/dRAID/dRAID/scripts/kill_server.sh $username"
     fi
   fi
   let i+=1

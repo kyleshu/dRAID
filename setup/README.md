@@ -9,7 +9,7 @@ To the best of our knowledge, the only publicly available testbed is CloudLab.
 ## Clone the repository
 You will need to clone this repository to your desktop. Run:
 ```Bash
-git clone https://github.com/kyleshu/dRAID_ASPLOS23.git (TODO)
+git clone https://github.com/pkusys/dRAID.git
 ```
 
 ## Start Experiment
@@ -37,9 +37,9 @@ The CentOS nodes are all the nodes except the last one. Check the "List View" ta
 SSH into each of the nodes, at your home directory run:
 ```Bash
 # clone the artifacts
-git clone https://github.com/kyleshu/dRAID_ASPLOS23.git (TODO)
+git clone https://github.com/pkusys/dRAID.git
 # run the setup script
-cd dRAID_ASPLOS23/setup (TODO)
+cd dRAID
 ./configure_cloudlab.sh
 ```
 It will take a few minutes to run, you can setup multiple nodes in parallel.
@@ -64,5 +64,5 @@ make
 sudo make install
 sudo ldconfig
 # clone the artifacts
-git clone https://github.com/kyleshu/dRAID_ASPLOS23.git (TODO)
+git clone https://github.com/pkusys/dRAID.git
 ```

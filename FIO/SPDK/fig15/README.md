@@ -2,7 +2,7 @@
 
 1. Generate the host-side configuration file on node0:
 ```Bash
-cd ~/dRAID_ASPLOS23/FIO/SPDK/fig15 (TODO)
+cd ~/dRAID/FIO/SPDK/fig15
 ../generate_raid_config.sh 512 8 1
 ```
 

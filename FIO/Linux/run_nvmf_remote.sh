@@ -12,7 +12,7 @@ do
   if [[ $i -gt 0 ]]
   then
     echo "start $line"
-    sudo ssh -tt "root@$line" "/users/$username/dRAID_ASPLOS23/FIO/Linux/run_nvmf.sh $username $interface"
+    sudo ssh -tt "root@$line" "/users/$username/dRAID/FIO/Linux/run_nvmf.sh $username $interface"
     echo "$line is READY!"
   else
     echo "skipping $line"

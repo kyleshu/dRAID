@@ -3,7 +3,7 @@
 
 1. mount RAID by running :
 ```Bash
-cd ~/dRAID_ASPLOS23/FIO/Linux/fig14a (TODO)
+cd ~/dRAID/FIO/Linux/fig14a
 ./mount.sh # enter y when it prompts
 ```
 

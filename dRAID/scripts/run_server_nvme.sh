@@ -17,7 +17,7 @@ cd /users/$username/draid-spdk
 sudo ./scripts/setup.sh reset
 sudo HUGEMEM=90000 PCI_ALLOWED="0000:c6:00.0" ./scripts/setup.sh
 
-cd /users/$username/dRAID_ASPLOS23/dRAID/server
+cd /users/$username/dRAID/dRAID/server
 sudo rm nohup.out
 sudo -u $username make clean
 sudo -u $username make $raid_option

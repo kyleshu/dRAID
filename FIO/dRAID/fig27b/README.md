@@ -2,7 +2,7 @@
 
 For each of the I/O depth, run:
 ```Bash
-cd ~/dRAID_ASPLOS23/FIO/dRAID/fig27b (TODO)
+cd ~/dRAID/FIO/dRAID/fig27b
 
 ./run.sh <io_depth> # must be one of [2,4,8,16,32,48,64,96,128,168]
 ```

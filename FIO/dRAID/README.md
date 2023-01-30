@@ -13,7 +13,7 @@ sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
 
 2. Compile FIO plugin for dRAID:
 ```Bash
-cd ~/dRAID_ASPLOS23/FIO/dRAID (TODO)
+cd ~/dRAID/FIO/dRAID
 make spdk_bdev
 ```
 

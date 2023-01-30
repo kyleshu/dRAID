@@ -4,7 +4,7 @@ If not specified, all the following operations are from node0, which servers as 
 
 1. Start all remote targets by running:
 ```Bash
-cd ~/dRAID_ASPLOS23/FIO/SPDK (TODO)
+cd ~/dRAID/FIO/SPDK
 ./run_nvmf_remote.sh ens1f0 # enter yes when it prompts
 ```
 
