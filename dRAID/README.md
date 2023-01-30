@@ -43,5 +43,5 @@ This program uses RAM disk to verify dRAID read/write functionality. You will ne
 cd ~/dRAID/dRAID/scripts
 ./run_basic_test.sh # enter yes when it prompts
 ```
-- 
+- You should see `bdev io write completed successfully` and `bdev io read completed successfully`.
 - Ignore the error message `io_device Raid0 not unregistered`. We have not implemented graceful shutdown yet.
