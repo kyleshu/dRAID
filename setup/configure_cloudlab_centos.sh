@@ -33,3 +33,6 @@ git submodule update --init
 ./configure --with-rdma --with-fio=$HOME/fio --with-isal --with-raid5 --disable-unit-tests
 make
 cd ..
+
+# clone customized version of rocksdb for testing
+git clone https://github.com/kyleshu/rocksdb.git

@@ -14,5 +14,5 @@ sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
 2. Compile mkfs plugin for dRAID and YCSB:
 ```Bash
 cd ~/dRAID/YCSB/dRAID
-./compile.sh
+./compile.sh [rocksdb/objstore] # choose which application to run
 ```
