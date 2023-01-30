@@ -19,7 +19,7 @@
 
 ## Prerequisite
 
-You must complete all the CloudLab setup steps under `setup` before you proceed further.
+You must complete all the CloudLab setup steps under `setup/` before you proceed further.
 
 ## Compile
 

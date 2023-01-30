@@ -6,4 +6,4 @@
 
 ## Prerequisite
 
-You must complete all the CloudLab setup steps under `setup` before you proceed to any FIO experiments.
+You must complete all the CloudLab setup steps under `setup/` before you proceed to any FIO experiments.
