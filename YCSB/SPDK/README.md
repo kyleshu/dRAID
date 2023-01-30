@@ -16,22 +16,8 @@ sudo ./setup.sh reset
 sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
 ```
 
-3. Compile mkfs plugin for SPDK:
+3. Compile mkfs plugin for SPDK and YCSB:
 ```Bash
-cd ~/spdk/test/blobfs/mkfs
-make mkfs
+cd ~/dRAID/YCSB/SPDK
+./compile.sh
 ```
-
-4. Prepare for YCSB:
-```Bash
-cd ~
-mkdir -p data
-
-cd ~/rocksdb
-sudo make -j8 install-shared SPDK_DIR=../spdk
-sudo ldconfig
-cd ycsb
-mkdir build
-cd build
-cmake ../
-make -j
