@@ -2,7 +2,7 @@
 
 If not specified, all the following operations are from node0, which servers as the host. 
 
->Make sure you have successfully run HelloWorld program under `dRAID/` before you proceed.
+>Make sure you have successfully run the basic test under `dRAID/` before you proceed.
 
 1. Setup SPDK on node0:
 ```Bash
