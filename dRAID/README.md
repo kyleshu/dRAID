@@ -36,30 +36,12 @@ make raid6
 ```
 You do ***not*** need to do this step for every remote target. When you run HelloWorld/FIO/YCSB, the script will compile the code on the remote targets for you.
 
-## Run HelloWorld Program
+## Run Basic Test Program
 
-This program uses RAM disk to verify dRAID read/write functionality. You will need the first 4 nodes of your testbed to run this program.
-
-1. Start dRAID on remote targets by running the following command on node0:
+This program uses RAM disk to verify dRAID read/write functionality. You will need the first 4 nodes of your testbed to run this program. Run basic test script on node0::
 ```Bash
 cd ~/dRAID/dRAID/scripts
-./run_server_remote_malloc.sh raid5 100g 512 3 1 # enter yes when it prompts
+./run_basic_test.sh # enter yes when it prompts
 ```
-
-2. Generate the host-side configuration file on node0:
-```Bash
-./generate_raid_config.sh 512 3 1
-```
-3. Setup SPDK on node0:
-```Bash
-cd ~/draid-spdk/scripts
-sudo ./setup.sh reset
-sudo HUGEMEM=90000 PCI_BLOCKED="0000:c5:00.0 0000:c6:00.0" ./setup.sh
-```
-
-5. Run HelloWorld program on node0:
-```Bash
-cd ~/dRAID/dRAID/host
-sudo ./rpc_raid_main -c ~/artifacts/raid5_100g.json -b Raid0
-```
-Ignore the error message `io_device Raid0 not unregistered`. We have not implemented graceful shutdown yet.
+- 
+- Ignore the error message `io_device Raid0 not unregistered`. We have not implemented graceful shutdown yet.
