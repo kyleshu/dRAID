@@ -39,8 +39,8 @@ SSH into each of the nodes, at your home directory run:
 # clone the artifacts
 git clone https://github.com/pkusys/dRAID.git
 # run the setup script
-cd dRAID
-./configure_cloudlab.sh
+cd dRAID/setup
+./configure_cloudlab_centos.sh
 ```
 It will take a few minutes to run, you can setup multiple nodes in parallel.
 
@@ -50,19 +50,9 @@ The Ubuntu node is the last one. Check the "List View" tab of your experiment pa
 
 SSH into the node, at your home directory run:
 ```Bash
-# install dependencies of Linux RAID
-sudo apt update -y
-sudo apt install nvme-cli -y
-sudo apt install mdadm -y
-sudo apt install libaio-dev -y
-sudo modprobe nvme-rdma
-sudo mkdir /raid
-# install FIO
-git clone https://github.com/axboe/fio
-cd fio
-make
-sudo make install
-sudo ldconfig
 # clone the artifacts
 git clone https://github.com/pkusys/dRAID.git
+# run the setup script
+cd dRAID/setup
+./configure_cloudlab_ubuntu.sh
 ```
