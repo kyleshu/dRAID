@@ -23,18 +23,11 @@ You must complete all the CloudLab setup steps under `setup` before you proceed 
 
 ## Compile
 
-1. You only need to compile host-side code on the first node (node0). To compile the host-side code, run:
+You only need to compile host-side code on the first node (node0). To compile the host-side code, run:
 ```Bash
 cd ~/dRAID/dRAID/host
 make rpc_raid_main
 ```
-2. You need to compile server-side code on all the nodes except the first (node0) and the last one (Ubuntu node). To compile the server-side code, run:
-```Bash
-cd ~/dRAID/dRAID/server
-make raid5
-make raid6
-```
-You do ***not*** need to do this step for every remote target. When you run HelloWorld/FIO/YCSB, the script will compile the code on the remote targets for you.
 
 ## Run Basic Test Program
 
