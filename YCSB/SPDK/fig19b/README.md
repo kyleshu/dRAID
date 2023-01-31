@@ -8,7 +8,7 @@ cd ~/dRAID/YCSB/SPDK
 
 2. Generate the host-side configuration file on node0:
 ```Bash
-cd ~/dRAID/FIO/SPDK/fig19b
+cd ~/dRAID/YCSB/SPDK/fig19b
 ../generate_raid_config.sh 512 8 1
 ```
 
