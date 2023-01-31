@@ -2,7 +2,7 @@
 
 To the best of our knowledge, the only publicly available testbed is CloudLab. 
 - To setup a testbed, you will need to acquire a CloudLab account at https://www.cloudlab.us/ first.
-- We strongly suggest to reserve the nodes (https://www.cloudlab.us/resgroup.php) in advance, because they are usually occupied.
+- We strongly suggest to reserve the nodes (https://www.cloudlab.us/resgroup.php) in advance, because availability of them are very limited.
   - You will need 20 c6525-100g instances from CloudLab Utah cluster to run the full test suite.
 - Don't forget to upload your SSH keys to CloudLab (https://www.cloudlab.us/ssh-keys.php). Otherwise, you will not be able to log into the nodes.
 
