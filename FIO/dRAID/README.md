@@ -21,4 +21,4 @@ make spdk_bdev
    - Figure 17 requires a different testbed setup and a bit code hacking, which we do not include in this artifact.
    - Ignore the warning "RPC client command timeout". It does not affect the experiments.
    - Ignore the error message `io_device Raid0 not unregistered`. We have not implemented graceful shutdown yet.
-   - If you see RDMA related errors or the experiment hangs at the beginning (more often observed for large stripe width). This is due to race conditions caused by imperfect implementation of the start-up process. You can safely kill and rerun the command.
+   - If you see RDMA related errors or the experiment hangs at the beginning (more often observed for large stripe width), this is due to race conditions caused by imperfect implementation of the start-up process. You can safely kill and rerun the command.
