@@ -19,5 +19,6 @@ sudo nvme list # number of drives should be equal to your testbed size
 
 4. Once you are done, disconnect from all remote targets by running:
 ```Bash
+cd ~/dRAID/FIO/Linux
 ./disconnect_nvmf.sh
 ```
